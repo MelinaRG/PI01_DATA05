@@ -1,7 +1,10 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi
 
+RUN pip install --upgrade pip
+
+ENV PIP_ROOT_USER_ACTION=ignore
+
 RUN pip install pandas
-RUN pip install re
 
 EXPOSE 80
 
