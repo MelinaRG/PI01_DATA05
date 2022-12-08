@@ -66,7 +66,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <div class="w3-row">
     <div class="w3-twothird w3-container">
         <h4>
-          <b><p>Si desea conocer lacantidad de veces que se repite un género y la plataforma con mayor frecuencia del mismo:</b> 
+          <b><p>Si desea conocer la cantidad de veces que se repite un género y la plataforma con mayor frecuencia del mismo:</b> 
        </h4>
       <h4 class="w3-text-purple">/get_listedin(genero)</h4>
       <h5 class="w3-text-gray">Los parametros que puede utilizar son:</h5>
