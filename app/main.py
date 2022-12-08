@@ -45,7 +45,7 @@ async def genero(genero:str):
     x.reset_index(inplace=True)
     x.sort_values(by='Titulo', inplace=True, ascending=False)
     x.reset_index(inplace=True, drop=True)
-    return x.iloc[0]
+    return  (f' El genero {genero} se repite con mayor frecuencia en la plataforma {x.iloc[0]}')
 
 #Esta funcion nos devuelve actor que más se repite según plataforma y año
 
@@ -61,4 +61,4 @@ async def actor(plataforma:str, anio:int):
     dict_actor = dict(zip(actor_list,map(lambda x: actor_list.count(x),actor_list)))
     max_actor = max(dict_actor, key=dict_actor.get)
     max_actor_appearances = dict_actor.get(max_actor)
-    return f' El actor {max_actor} cuenta con {max_actor_appearances} apariciones.'
+    return (f' El actor {max_actor} cuenta con {max_actor_appearances} apariciones.')
