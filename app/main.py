@@ -45,7 +45,7 @@ async def genero(genero:str):
     x.reset_index(inplace=True)
     x.sort_values(by='Titulo', inplace=True, ascending=False)
     x.reset_index(inplace=True, drop=True)
-    return (f'El genero {genero} se repite {x.loc[1,"Titulo"]} veces, en la plataforma {x.loc[1,"Plataforma"]} ')
+    return (f'El genero {genero} se repite {x.loc[0,"Titulo"]} veces, en la plataforma {x.loc[0,"Plataforma"]} ')
 
 #Esta funcion nos devuelve actor que más se repite según plataforma y año
 
