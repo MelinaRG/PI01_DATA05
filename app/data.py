@@ -5,16 +5,16 @@ import re
 
 #Extraccion de los datos provenientes de 3 archivos .csv y 1 archivo .json
 
-amazon = "./app/Datasets/amazon_prime_titles.csv"
+amazon = "./Datasets/amazon_prime_titles.csv"
 df_1= pd.read_csv(amazon)
 
-disney = "./app/Datasets/disney_plus_titles.csv"
+disney = "./Datasets/disney_plus_titles.csv"
 df_2= pd.read_csv(disney)
 
-hulu = "./app/Datasets/hulu_titles.csv"
+hulu = "./Datasets/hulu_titles.csv"
 df_3= pd.read_csv(hulu)
 
-netflix = "./app/Datasets/netflix_titles.json"
+netflix = "./Datasets/netflix_titles.json"
 df_4 = pd.read_json(netflix)
 
 #Comenzamos con el proceso de transformacion de los datos, en este caso agregamos una columna llamada Plataforma
