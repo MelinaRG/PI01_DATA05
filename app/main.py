@@ -1,6 +1,8 @@
 #Importamos 
 
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 from data import data
 import pandas as pd
 
@@ -8,9 +10,89 @@ import pandas as pd
 
 app = FastAPI()
 
-@app.get('/')
-async def mensaje():
-    return 'Bienvenidos'
+templates = Jinja2Templates(directory="templates")
+
+@app.get("/", response_class=HTMLResponse)
+async def index():
+    return '''<html lang="en">
+<head>
+<title>PI DATA 05</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+</head>
+<body>
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-purple">Guía de Navegación:</h1>
+      <h3>Para poder realizar una consulta debe agregar a la URL el decorador con los parametros que desea analizar, por ejemplo: </h3>
+      <h4>
+        <b><p>Si desea conocer la película/serie con mayor duración filtrado por plataforma, año y tipo de duración:</b>
+        </h4>
+      <h4 class="w3-text-purple">/get_max_duration(año, plataforma, tipo)</h4>
+      <h5 class="w3-text-gray">Los parametros que puede utilizar son:</h5>
+      <h5 class="w3-text-gray">Año: de 1920 a 2021</h5>
+      <h5 class="w3-text-gray">Plataforma: Amazon, Disney, Hulu, Netflix</h5>
+      <h5 class="w3-text-gray">Tipo: min (para peliculas), seasons (para series)</h5>
+      
+    </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h4>
+        <b><p>Si desea conocer la cantidad de películas y de series por plataforma:</b> 
+      </h4>
+      <h4 class="w3-text-purple">/get_count_platform(plataforma)</h4>
+      <h5 class="w3-text-gray">Los parametros que puede utilizar son:</h5>
+      <h5 class="w3-text-gray">Plataforma: Amazon, Disney, Hulu, Netflix</h5>
+     
+    </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+        <h4>
+          <b><p>Si desea conocer lacantidad de veces que se repite un género y la plataforma con mayor frecuencia del mismo:</b> 
+       </h4>
+      <h4 class="w3-text-purple">/get_listedin(genero)</h4>
+      <h5 class="w3-text-gray">Los parametros que puede utilizar son:</h5>
+      <h5 class="w3-text-gray">Genero: Comedy, Romantic, Documentary, etc</h5>
+      
+    </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+        <h4>
+           <b><p>Si desea conocer al actor/actriz con mayor número de apariciones según año y plataforma.</b> 
+        </h4>
+      <h4 class="w3-text-purple">/get_actor(plataforma, año)</h4>
+      <h5 class="w3-text-gray">Los parametros que puede utilizar son:</h5>
+      <h5 class="w3-text-gray">Plataforma: Amazon, Disney, Hulu, Netflix</h5>
+      <h5 class="w3-text-gray">Año: de 1920 a 2021</h5>
+      
+    </div>
+  </div>
+  
+<!-- END MAIN -->
+</div>
+</body>
+</html> 
+'''
 
 #Esta funcion nos devuelve la máxima duración según tipo de film (película/serie) 
 
