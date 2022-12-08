@@ -10,7 +10,7 @@ app = FastAPI()
 
 @app.get('/')
 async def mensaje():
-    'Bienvenidos'
+    return 'Bienvenidos'
 
 #Esta funcion nos devuelve la máxima duración según tipo de film (película/serie) 
 
@@ -26,7 +26,7 @@ async def duracion(anio:int, plataforma:str, tipo:str):
         x = data[data['Plataforma'] == plataforma][data['Año'] == anio][data['Tipo'] == t].groupby(['Plataforma', 'Tipo', 'Año'])['Duracion'].idxmax()
         duracion = data['Duracion'].get(x[0]) 
         titulo = data['Titulo'].get(x[0])
-    return (f'El titulo de mas larga duracion es: {titulo}, con un valor de {duracion}')
+    return (f'El titulo de mas larga duracion es: {titulo}, con un valor de {duracion} {tipo}, para la plataforma {plataforma}')
 
 #Esta funcion nos devuelve cantidad de películas y series (separado) por plataforma 
 
@@ -34,7 +34,7 @@ async def duracion(anio:int, plataforma:str, tipo:str):
 async def plataforma(plataforma:str):
     x = data[data['Plataforma'] == plataforma]
     x = x.groupby(['Plataforma'])['Tipo'].value_counts()
-    return x
+    return (f'La plataforma {plataforma} tiene {x[0]} Peliculas y {x[1]} Series')
 
 #Esta funcion nos devuelve cantidad de veces que se repite un género y plataforma con mayor frecuencia del mismo
 
@@ -45,7 +45,7 @@ async def genero(genero:str):
     x.reset_index(inplace=True)
     x.sort_values(by='Titulo', inplace=True, ascending=False)
     x.reset_index(inplace=True, drop=True)
-    return x.iloc[0]
+    return (f'El genero {genero} se repite {x.loc[1,"Titulo"]} veces, en la plataforma  {x.loc[1,"Plataforma"]} ')
 
 #Esta funcion nos devuelve actor que más se repite según plataforma y año
 
@@ -61,4 +61,4 @@ async def actor(plataforma:str, anio:int):
     dict_actor = dict(zip(actor_list,map(lambda x: actor_list.count(x),actor_list)))
     max_actor = max(dict_actor, key=dict_actor.get)
     max_actor_appearances = dict_actor.get(max_actor)
-    return f' El actor {max_actor} cuenta con {max_actor_appearances} apariciones.'
+    return f' El actor {max_actor} cuenta con {max_actor_appearances} apariciones en la plataforma {plataforma}, para el año {anio}'
