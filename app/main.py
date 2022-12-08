@@ -27,7 +27,7 @@ async def index():
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 .w3-sidebar {
   z-index: 3;
-  width: 250px;
+  width: 10px;
   top: 43px;
   bottom: 0;
   height: inherit;
@@ -35,7 +35,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 </style>
 </head>
 <body>
-<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<!-- Main content: shift it to the right by 10 pixels when the sidebar is visible -->
 <div class="w3-main" style="margin-left:250px">
 
   <div class="w3-row w3-padding-64">
