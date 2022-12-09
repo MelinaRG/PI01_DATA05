@@ -66,7 +66,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       <h5 class="w3-text-gray">Los parámetros que puede utilizar son:</h5>
       <h5 class="w3-text-gray"> + Plataforma: Amazon, Disney, Hulu, Netflix</h5>
 
-      <h6>Ej: /get_count_platform(Netflix) </h6>
+      <h6>Ej: /get_count_plataform(Netflix) </h6>
       <h6>Respuesta esperada: 6131 películas y 2676 series</h6>
      
     </div>
