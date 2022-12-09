@@ -58,7 +58,7 @@ Las consultas a realizar son:
 
 ## **Link del video explicativo: :paperclip:**
 
-:small_orange_diamond:
+:small_orange_diamond:https://youtu.be/ho9JbrRIvlE
 
 <a href='https://www.memegenerator.es/meme/30451188'><img src='https://cdn.memegenerator.es/imagenes/memes/full/30/45/30451188.jpg' alt='memegenerator.es' border='0'></a> Creado con <a target='_blank' href='https://www.memegenerator.es'>memegenerator.es</a>
 
