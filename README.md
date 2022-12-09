@@ -23,7 +23,6 @@ Las consultas a realizar son:
   
 :small_orange_diamond: Cantidad de veces que se repite un género y plataforma con mayor frecuencia del mismo.
     El request debe ser: `get_listedin`('genero')  
-    Como ejemplo de género pueden usar 'comedy', el cuál deberia devolverles un cunt de 2099 para la plataforma de amazon.
 
 :small_orange_diamond: Actor que más se repite según plataforma y año.
   El request debe ser: `get_actor`(plataforma, año)
@@ -54,4 +53,12 @@ Las consultas a realizar son:
 :small_orange_diamond: Mogenius
 
 ## **Link del video explicativo: :paperclip:**
+
+:small_orange_diamond:
+
+## **Link del deployment en Mogenius: :paperclip:**
+
+:small_orange_diamond:https://pi01-data05-prod-pi-data-50dj1r.mo2.mogenius.io/
+
+<a href='https://www.memegenerator.es/meme/30451188'><img src='https://cdn.memegenerator.es/imagenes/memes/full/30/45/30451188.jpg' alt='memegenerator.es' border='0'></a> Creado con <a target='_blank' href='https://www.memegenerator.es'>memegenerator.es</a>
 
