@@ -40,15 +40,20 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-purple">Guía de Navegación:</h1>
-      <h3>Para poder realizar una consulta debe agregar a la URL el decorador con los parametros que desea analizar, por ejemplo: </h3>
+      <h3>Para poder realizar una consulta debe agregar a la URL el decorador con los parámetros que desea analizar, por ejemplo: </h3>
       <h4>
-        <b><p>Si desea conocer la película/serie con mayor duración filtrado por plataforma, año y tipo de duración:</b>
+        <b><p>Si desea conocer la película/serie con mayor duración filtrando por plataforma, año y tipo de duración:</b>
         </h4>
       <h4 class="w3-text-purple">/get_max_duration(año, plataforma, tipo)</h4>
-      <h5 class="w3-text-gray">Los parametros que puede utilizar son:</h5>
-      <h5 class="w3-text-gray">Año: de 1920 a 2021</h5>
-      <h5 class="w3-text-gray">Plataforma: Amazon, Disney, Hulu, Netflix</h5>
-      <h5 class="w3-text-gray">Tipo: min (para peliculas), seasons (para series)</h5>
+      <h5 class="w3-text-gray"> Los parámetros que puede utilizar son:</h5>
+      <h5 class="w3-text-gray"> + Año: de 1920 a 2021</h5>
+      <h5 class="w3-text-gray"> + Plataforma: Amazon, Disney, Hulu, Netflix</h5>
+      <h5 class="w3-text-gray"> + Tipo: min (para peliculas), seasons (para series)</h5>
+
+      <h6>Ej: /get_max_duration(2018, Hulu, min) </h6>
+      <h6>Respuesta esperada: the house that jack built </h6>
+
+
       
     </div>
 
@@ -58,8 +63,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
         <b><p>Si desea conocer la cantidad de películas y de series por plataforma:</b> 
       </h4>
       <h4 class="w3-text-purple">/get_count_platform(plataforma)</h4>
-      <h5 class="w3-text-gray">Los parametros que puede utilizar son:</h5>
-      <h5 class="w3-text-gray">Plataforma: Amazon, Disney, Hulu, Netflix</h5>
+      <h5 class="w3-text-gray">Los parámetros que puede utilizar son:</h5>
+      <h5 class="w3-text-gray"> + Plataforma: Amazon, Disney, Hulu, Netflix</h5>
+
+      <h6>Ej: /get_count_platform(Netflix) </h6>
+      <h6>Respuesta esperada: 6131 películas y 2676 series</h6>
      
     </div>
 
@@ -69,8 +77,12 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
           <b><p>Si desea conocer la cantidad de veces que se repite un género y la plataforma con mayor frecuencia del mismo:</b> 
        </h4>
       <h4 class="w3-text-purple">/get_listedin(genero)</h4>
-      <h5 class="w3-text-gray">Los parametros que puede utilizar son:</h5>
-      <h5 class="w3-text-gray">Genero: Comedy, Romantic, Documentary, etc</h5>
+      <h5 class="w3-text-gray">Los parámetros que puede utilizar son:</h5>
+      <h5 class="w3-text-gray"> + Genero: Comedy, Romantic, Documentary, etc</h5>
+
+      <h6>Ej: /get_listedin(Comedy) </h6>
+      <h6>Respuesta esperada: 2099 </h6>
+     
       
     </div>
 
@@ -80,9 +92,12 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
            <b><p>Si desea conocer al actor/actriz con mayor número de apariciones según año y plataforma.</b> 
         </h4>
       <h4 class="w3-text-purple">/get_actor(plataforma, año)</h4>
-      <h5 class="w3-text-gray">Los parametros que puede utilizar son:</h5>
-      <h5 class="w3-text-gray">Plataforma: Amazon, Disney, Hulu, Netflix</h5>
-      <h5 class="w3-text-gray">Año: de 1920 a 2021</h5>
+      <h5 class="w3-text-gray">Los parámetros que puede utilizar son:</h5>
+      <h5 class="w3-text-gray"> + Plataforma: Amazon, Disney, Hulu, Netflix</h5>
+      <h5 class="w3-text-gray"> + Año: de 1920 a 2021</h5>
+
+      <h6>Ej: /get_actor(Netflix, 2018) </h6>
+      <h6>Respuesta esperada: Andrea Libman, 8 apariciones </h6>
       
     </div>
   </div>
