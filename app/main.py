@@ -62,7 +62,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       <h4>
         <b><p>Si desea conocer la cantidad de películas y de series por plataforma:</b> 
       </h4>
-      <h4 class="w3-text-purple">/get_count_platform(plataforma)</h4>
+      <h4 class="w3-text-purple">/get_count_plataform(plataforma)</h4>
       <h5 class="w3-text-gray">Los parámetros que puede utilizar son:</h5>
       <h5 class="w3-text-gray"> + Plataforma: Amazon, Disney, Hulu, Netflix</h5>
 
